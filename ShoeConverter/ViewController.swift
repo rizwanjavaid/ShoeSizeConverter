@@ -28,34 +28,22 @@ class ViewController: UIViewController {
 
     @IBAction func convertButtonPressed(sender: UIButton) {
         
-        // Capture the shoe size input from the text field
-        let sizeFromTextField = mensShoeSizeTextField.text
+//        // Capture the shoe size input from the text field
+//        let sizeFromTextField = mensShoeSizeTextField.text
+//        
+//        // Convert the captured shoes size to an optional using the toInt() function
+//        let numberFromTextField = sizeFromTextField.toInt()
+//        
+//        // Convert the optional to an Int
+//        var integerFromTextField = numberFromTextField!
         
-        // Convert the captured shoes size to an optional using the toInt() function
-        let numberFromTextField = sizeFromTextField.toInt()
         
-        // Convert the optional to an Int
-        var integerFromTextField = numberFromTextField!
+        let sizeFromTextField = mensShoeSizeTextField.text.toInt()
         
-        // Setup a constant to store the conversion between the US and European shoe sizes
         let conversionConstant = 30
-        
-        // Update the value
-        integerFromTextField += conversionConstant
-        
-        // Unhide the converted label
         mensConvertedShoeSizeLabel.hidden = false
-        labelForConvertedSize.hidden = false
         
-        // Convert the integer to a string
-        let stringWithUpdatedShoeSize = "\(integerFromTextField)"
-        
-        // Update the converted label with the calculated shoe size
-        mensConvertedShoeSizeLabel.text = stringWithUpdatedShoeSize
-        
-        
-        
-        
+        mensConvertedShoeSizeLabel.text = "\(sizeFromTextField! + conversionConstant)" + " in European Shoe Size."
         
         
     }
