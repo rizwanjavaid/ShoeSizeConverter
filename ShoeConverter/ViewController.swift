@@ -11,10 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var mensShoeSizeTextField: UITextField!
-    
     @IBOutlet weak var mensConvertedShoeSizeLabel: UILabel!
-    
     @IBOutlet weak var labelForConvertedSize: UILabel!
+    
+    @IBOutlet weak var womensShoeSizeTextField: UITextField!
+    @IBOutlet weak var womensConvertedShoeSizeLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +30,18 @@ class ViewController: UIViewController {
 
     @IBAction func convertButtonPressed(sender: UIButton) {
         
-//        // Capture the shoe size input from the text field
-//        let sizeFromTextField = mensShoeSizeTextField.text
-//        
-//        // Convert the captured shoes size to an optional using the toInt() function
-//        let numberFromTextField = sizeFromTextField.toInt()
-//        
-//        // Convert the optional to an Int
-//        var integerFromTextField = numberFromTextField!
-        
-        
         let sizeFromTextField = mensShoeSizeTextField.text.toInt()
-        
         let conversionConstant = 30
         mensConvertedShoeSizeLabel.hidden = false
-        
         mensConvertedShoeSizeLabel.text = "\(sizeFromTextField! + conversionConstant)" + " in European Shoe Size."
-        
-        
     }
 
+    @IBAction func convertWomentShoeSizeButtonPressed(sender: UIButton) {
+     
+        let sizeFromTextField  = Double((womensShoeSizeTextField.text as NSString).doubleValue)
+        let conversionConstant = 30.5
+        womensConvertedShoeSizeLabel.hidden = false
+        womensConvertedShoeSizeLabel.text = "\(sizeFromTextField + conversionConstant)" + " in European Shoe Size"
+    }
 }
 
